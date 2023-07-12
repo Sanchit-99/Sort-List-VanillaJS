@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --border-color: #e3e5e4;
+  --background-color: #c3c7ca;
+  --text-color: #34444f;
+}
+body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.draggable-list {
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0;
+    list-style-type: none;
+}
+
+.draggable-list li{
+    display: flex;
+    flex: 1;
+}
+
+.draggable-list li:not(:last-of-type) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.draggable-list li .number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    background-color: var(--background-color);
+}
+
+.draggable-list li .country-name{
+    margin: 0 20px 0 20px;
+}
+
+.draggable-list li.right .country-name{
+    color: rgb(33, 156, 33);
+}
+
+.draggable-list li.over .draggable{
+    background-color: #eaeaea;
+}
+
+.draggable-list li.wrong .country-name{
+    color: rgb(225, 79, 79);
+}
+
+.draggable-list .draggable {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    flex: 1;
+}
+
+.check{
+    background-color: var(--background-color);
+    border: none;
+    counter-reset: var(--text-color);
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.check:active{
+    transform: scale(0.98);
+}
+
+.check:focus{
+    outline: none;
+}
